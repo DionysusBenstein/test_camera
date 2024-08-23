@@ -1,0 +1,14 @@
+<h1>Test Web Camera telegram mini app</h1>
+
+<video id="video" width="100%" height="480" autoplay></video>
+
+<script>
+  const video = document.querySelector('#video');
+
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+      video.srcObject = stream;
+      video.play();
+    });
+  }
+</script>
